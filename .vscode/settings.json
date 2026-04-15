@@ -1,23 +1,23 @@
 {
   "latex-workshop.latex.rootFile.useSubFile": false,
   "latex-workshop.view.pdf.viewer": "tab",
-  "latex-workshop.latex.outDir": "/Users/filippo/Documents/Lab/Formal Models/Paper Formal Models/build",
+  "latex-workshop.latex.outDir": "/Users/filippo/Documents/Lab/thesis_proposal/build",
   "latex-workshop.latex.tools": [
     {
       "name": "latexmk",
       "command": "latexmk",
       "args": [
         "-xelatex",
-        "-output-directory=/Users/filippo/Documents/Lab/Formal Models/Paper Formal Models/build",
         "-interaction=nonstopmode",
         "-synctex=1",
+        "-outdir=/Users/filippo/Documents/Lab/thesis_proposal/build",
         "%DOC%"
       ]
     }
   ],
   "latex-workshop.latex.recipes": [
     {
-      "name": "latexmk ➜ build/",
+      "name": "latexmk build",
       "tools": ["latexmk"]
     }
   ],
