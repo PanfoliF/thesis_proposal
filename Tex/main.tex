@@ -1,0 +1,62 @@
+\documentclass[a4paper,11pt]{article}
+
+\usepackage{stile-generale}
+\addbibresource{/Users/filippo/Documents/Lab/Formal Models/Paper Formal Models/Formal_Models.bib}
+
+%------- Metadati -------
+\renewcommand{\Uni}{University of Mannheim}
+\renewcommand{\Dept}{Department of Political Science}
+\renewcommand{\Course}{Formal Models in Comparative Politics \& International Relations}
+\renewcommand{\Instructor}{Prof.\ Dr. Thomas J. Bräuninger}
+\renewcommand{\AuthorName}{Filippo Panfoli}
+\renewcommand{\AuthorID}{2202955}
+\renewcommand{\AuthorEmailAddr}{filippo.panfoli@students.uni-mannheim.de}
+\renewcommand{\GitUser}{PanfoliF}
+\renewcommand{\GitRepo}{Paper-Formal-Models} % se non vuoi repo: lascia vuoto -> {}
+\renewcommand{\ORCIDid}{0009-0000-7861-8036}
+\renewcommand{\WebsiteURL}{https://github.com/PanfoliF}
+\renewcommand{\DocVersion}{v1.1}
+\renewcommand{\LastUpdated}{\today}
+\renewcommand{\Keywords}{game theory; deterrence; animal behaviour; formal models; bargaining}
+\renewcommand{\JEL}{C72; D82}
+ %------------------------
+
+\begin{document}
+% alias compilepaper='latexmk -xelatex -output-directory="/Users/filippo/Documents/Lab/Formal Models/Paper Formal Models/build" Tex/main.tex'
+
+%------- Title Page -------
+% La numerazione "conta" dalla title page
+\pagenumbering{arabic}
+\setcounter{page}{1}
+% Pagina 1: title page (senza numero visibile)
+\CustomTitlePage{Elephants and Game Theory}{\today}
+\clearpage
+% Da qui in poi: numeri visibili e continui (Abstract = pagina 2)
+\pagestyle{fancy}
+\justify
+
+%------- Document -------
+\input{Tex/Abstract.tex}
+\newpage
+\input{Tex/Introduction.tex}
+\input{Tex/Causal Inference.tex}
+\input{Tex/Models.tex}
+\input{Tex/Literature.tex}
+\input{Tex/Conclusion.tex}
+
+
+%------- Bibliography -------
+\newpage
+\subsection*{\Large Bibliography}
+\printbibliography[type=book, title={\large Books}]
+\printbibliography[type=article, title={\large Articles}]
+
+
+%------- Additional Material -------
+% \newpage
+% \begin{refsection}
+%     \nocite{*}
+%     \printbibliography[title={\Large Additional Material}, notcategory=cited]
+% \end{refsection}
+
+\end{document}

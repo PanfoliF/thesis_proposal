@@ -1,0 +1,217 @@
+% !TEX root = ./main.tex
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{stile-generale}[2025/05/21 Stile base generale]
+
+\RequirePackage[utf8]{inputenc}
+\RequirePackage[T1]{fontenc}
+\RequirePackage[english]{babel}
+\RequirePackage{graphicx}
+\RequirePackage{microtype}
+\RequirePackage{subfiles}
+\RequirePackage{enumitem} % per personalizzare gli elenchi
+\RequirePackage{pgfplots} % per grafici
+\pgfplotsset{compat=1.18} % per grafici
+\RequirePackage{csquotes}
+\RequirePackage{lmodern} %font
+\RequirePackage{lipsum} % Pacchetto per testo Lorem Ipsum
+\RequirePackage{amsmath,amssymb}
+\RequirePackage{fontawesome5} % metadati, mail, GitHub, ORCID e sito!!!!
+\RequirePackage{setspace} % per interlinea
+\RequirePackage{ragged2e}
+
+%----------------------------
+\RequirePackage{geometry}
+\geometry{margin=3.75cm}
+
+%-------fancyhdr---------
+\RequirePackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhead{}
+% \fancyhead[LE,RO]{\thepage}
+% \fancyhead[RE]{\leftmark}
+% \fancyhead[LO]{\rightmark}
+% Fix for fancyhdr headheight warning
+\setlength{\headheight}{14.5pt}
+\addtolength{\topmargin}{-2.5pt}
+
+%--------------biblatex-------------------
+\RequirePackage[backend=biber,style=apa]{biblatex}
+% --- Traccia le voci citate in una categoria ---
+\DeclareBibliographyCategory{cited}
+\AtEveryCitekey{\addtocategory{cited}{\thefield{entrykey}}}
+
+%---------------------------------
+% senza queste righe i capitoli iniziano sempre su pagina dispari
+\makeatletter
+\renewcommand{\cleardoublepage}{\clearpage}
+\makeatother
+
+%---------------------------------
+\RequirePackage{hyperref}
+\hypersetup{
+    colorlinks=false,
+    pdftitle={Literature Review},
+    pdfpagemode=FullScreen,
+}
+
+%------IMMAGINI----
+\RequirePackage{caption}
+
+\captionsetup[figure]{
+  font=small,
+  labelfont=bf,
+  labelsep=colon,
+  justification=centering,
+  name=Figura
+}
+
+\newcommand{\immagine}[3][0.8\textwidth]{%
+  \begin{figure}[ht]
+    \centering
+    \includegraphics[width=#1]{#2}
+    \caption{#3}
+  \end{figure}
+}
+
+%--------TABELLE-----
+
+\RequirePackage{booktabs}
+\RequirePackage{array}
+
+\captionsetup[table]{
+  font=small,
+  labelfont=bf,
+  labelsep=colon,
+  justification=centering,
+  name=Tabella
+}
+
+\newcommand{\tabelladuecolonne}[4]{%
+  \begin{table}[ht]
+    \centering
+    \begin{tabular}{#1}
+      \toprule
+      #2 \\ \midrule
+      #3 \\
+      \bottomrule
+    \end{tabular}
+    \caption{#4}
+  \end{table}
+}
+
+\newcommand{\tabellacsv}[2][]{%
+  \begin{table}[ht]
+    \centering
+    \pgfplotstabletypeset[
+      col sep=comma,
+      string type,
+      header=true,
+      columns/.style={every column/.style={
+        column type={>{\raggedright\arraybackslash}p{3cm}}
+      }},
+      #1
+    ]{#2}
+    \caption{Tabella da CSV}
+  \end{table}
+}
+
+% --- Sottotitolo con titling ---
+\RequirePackage{titling}
+\makeatletter
+\newcommand{\subtitle}[1]{\gdef\@subtitle{#1}} % memorizza il sottotitolo
+\newcommand{\@subtitle}{}                      % inizializza vuoto
+\renewcommand{\maketitlehookb}{% stampa dopo il titolo, prima degli autori
+  \ifx\@subtitle\@empty\else
+    \par\medskip
+    \begin{center}\large\itshape\@subtitle\end{center}
+  \fi}
+\makeatother
+
+% --- Metadati + comandi link (mail/GitHub/ORCID/sito) ----
+% di default sono vuoti: i valori veri li metti nel main ---
+\providecommand{\Uni}{}
+\providecommand{\Dept}{}
+\providecommand{\Course}{}
+\providecommand{\Instructor}{}
+\providecommand{\AuthorName}{}
+\providecommand{\AuthorID}{}
+\providecommand{\AuthorEmailAddr}{}
+\providecommand{\GitUser}{}
+\providecommand{\GitRepo}{}
+\providecommand{\ORCIDid}{}
+\providecommand{\WebsiteURL}{}
+\providecommand{\DocVersion}{}
+\providecommand{\LastUpdated}{}
+\providecommand{\Keywords}{}
+\providecommand{\JEL}{}
+
+% --- Comandi formattati ---
+\newcommand{\Email}{\href{mailto:\AuthorEmailAddr}{\faEnvelope\ \AuthorEmailAddr}}
+\newcommand{\GitHubProfile}{\href{https://github.com/\GitUser}{\faGithub\ \texttt{\GitUser}}}
+\newcommand{\GitHubRepo}{\href{https://github.com/\GitUser/\GitRepo}{\faCodeBranch\ \texttt{\GitUser/\GitRepo}}}
+\newcommand{\ORCID}{\href{https://orcid.org/\ORCIDid}{\faOrcid\ \ORCIDid}}
+\newcommand{\Website}{\href{\WebsiteURL}{\faGlobe\ \WebsiteURL}}
+\newcommand{\CCBY}{\href{https://creativecommons.org/licenses/by/4.0/}{CC BY 4.0}}
+
+
+% --- Helper per repo (se GitRepo è vuoto, link al profilo) ---
+\makeatletter
+\newcommand{\PrintRepoLink}{%
+  \ifx\GitRepo\@empty
+    \href{https://github.com/\GitUser}{github.com/\GitUser}%
+  \else
+    \GitHubRepo%
+  \fi
+}
+\makeatother
+
+% --- Macro per Titlepage (titolo e data li passi dal main) ---
+\newcommand{\CustomTitlePage}[2]{%
+\begin{titlepage}
+\thispagestyle{empty}
+\begin{center}
+\vspace*{1.4cm}
+
+{\LARGE \textbf{#1}\par}
+\vspace{0.45cm}
+
+{\large \Uni \qquad \Dept\par}
+
+\vspace{0.45cm}
+{\Course \par}
+
+\vspace{0.45cm}
+{\textbf{\AuthorName\ \small{\AuthorID}} \par}
+
+\vspace{0.45cm}
+{\small \Email \quad\textbar\quad \GitHubProfile \quad\textbar \par}
+
+\vspace{0.2cm}
+{\small \ORCID \quad\textbar\quad \Website \par}
+
+\vspace{0.45cm}
+{\small \textbf{Replication materials / \LaTeX\ sources:}\; \PrintRepoLink\par}
+
+\vspace{0.45cm}
+{\small \textbf{Version:} \DocVersion \quad\textbar\quad
+\textbf{Last updated:} \LastUpdated\par}
+
+\vspace{0.45cm}
+{\small \textbf{Keywords:} \Keywords\par}
+
+\vspace{0.45cm}
+{\small \textbf{JEL:} \JEL\par}
+
+\vspace{0.45cm}
+{\small \textbf{Prepared for:} \Course, taught by \Instructor\par}
+
+\vspace{0.45cm}
+{\small \textbf{License:} \CCBY\par}
+
+\vfill
+{\small #2\par}
+
+\end{center}
+\end{titlepage}
+}
+% ------------ END ---------------

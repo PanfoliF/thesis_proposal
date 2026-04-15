@@ -1,0 +1,85 @@
+
+\section{Introduction}
+
+% !TeX root = ../Tex/main.tex
+In this paper I wish to describe an intuition regarding the way game thoery has yet to formalise certain interactions between agents. Game thoerists consider surprises and shocks as the rationale for apparently irrational behaviour. I believe that the following paragraphs will convice the audience of the value of this contribution for two reasons; first, I hope the description provided will be used and applied further. Second, the conjecture about the role of emotions adds a new perspective to the literature about bounded rationality.
+
+\vspace*{1em}
+The intuition concerns animal behaivour that has drawn heavily on game thoery. Although it may seem distant from standard economic applications, still, it deals with the problems that game thoerists often face: the first is to represent unobserved mental processes, this means taking into consideration and inferring unobserved variables. The second problem deals with the creation of a formal idea about these processes. The last problem connects the formal idea to observed behaviour and derives an equilibrium, thus a state of the world with particular properties. I aim to show that seeking an explanation outside the mind is unnecessary, since it may well lie within it.
+
+\vspace*{1em}
+To streamline the exposition and to make the model more directly applicable, I exploit a singular situation described in \textcite{safinaWordsWhatAnimals2015}. This book is an amazing challenge for every person who has ever had to face a game-theoretic exercise. To support his thesis, the author provides the reader with detailed descriptions of animal interactions. All species selected belong to the category of "cognitively sophisticated" animals, animals that are capable of emotions and complex cognitive processes.
+I believe that each of these interactions is a useful game-theoretic exercise, since they force game thoerists to apply its knowledge out of his area of expertise.
+
+\vspace*{1em}
+This book also delivers a straightforward setting for these exercises, since animals offer a simplified set of agents for game theory. They are complex enough to beign represented as rational players, but they are not as complex as humans, so that most of the assumptions and simplifications have more grasp into reality. 
+In this respect, elephants appear to be a particularly apt exercise. There is plenty of documentation about their behaviours, and there is plenty of evidence that they act in accordance with a \textit{mind}. According to \textcite{safinaWordsWhatAnimals2015}, they are almost humans, and they often interact with humans.
+
+\vspace*{1em}
+I will formalise my conjecture through a Causal Directed Acyclic Graph (DAG). Since I wish to norrow down the gap between thoery and practice, I believe this tool is well suited to the research design. Additionally, it provides a more transparent version of the analysis, clarifiyng the variables of interest and the limits of the assumptions.
+
+\vspace*{1em}
+The final aim of this article is to clarify a contradiction between two similar situations that game theory formalises in different ways.
+
+% \vspace{1em}
+% \textcolor{red}{The models presented come from the signalling literature}.
+
+\subsection{Beyond Words}
+Carl Safina is a biologist and has written a widely read essay \parencite{safinaWordsWhatAnimals2015} about animals' minds. He argues that until now, biologists have been reluctant to deepen the study of animals' minds and "souls" and that is high time they did so. The curious thing about this book is that, in doing so, he draws readers' attention to a problem closely related to game theory.
+He tries to rationalise the conduct of some animals, arguing that their behaviour may be explained if we accept they are "intelligent", meaning that a mind guides their actions and that they are sensitive to emotions. This book is an attempt to place animals' minds at the same level of human minds.
+I hope the animal-world examples will:
+
+\begin{itemize}
+  \item change the way we theorise a broader set of agents and interactions.
+  \item be used to test the claims and strengthen the empirical support.
+  \item motivate a refined equilibrium concept.
+\end{itemize}
+
+\subsection{The Problem} \label{sub:problem}
+This section aims to clarify the setting captured by the game-theoretic representations, and to make the reader aware of the basic intuition.
+In the examples Safina describes in his book \parencite{safinaWordsWhatAnimals2015} animals seem to be driven by rationality and emotions, much like humans. 
+\textit{These are brief summaries of the two episodes.}
+Both interactions between humans and elephants happened in a wildlife park in Africa. In both, the surrounding environment appears similar.
+
+\subsubsection*{Case \(\text{n}^{{\small{0}}}1\)} \label{sub:case1}
+A staff member of a wildlife park in Africa reports an "attack" by an elephant on a tourist. The scene clearly highlights the signals that the elephant sends to the tourist. It also clearly identifies the reasons why it is logical to believe that the elephant intentionally avoided hurting the tourist.
+In particular, the staff member reports signs on the ground that strongly suggest the intention to halt the charge against the tourist moments before impact.
+We can formalise this game through a deterrence in which the elephant sends a threatening signal without intending to harm him.
+
+\vspace{1em}
+Another situation, recorded in the same environment, shows how similar conditions can produce an opposite pattern of actions.
+
+\subsubsection*{Case \(\text{n}^{{\small{0}}}2\)} \label{sub:case2}
+In the same wildlife park in Africa, a rescue group was dispatched to reach a shepherd who was badly hurt by an elephant. When the staff approached him, they reported that the shepherd stopped them from harming the animal. He argued the elephant had kept him safe during the night. From the conduct of the animal it seemed clear what the elephant intended. After the attack, it soon realised it had misinterpreted the signals from the shepherd, and after hurting him, the animal took care of him until the rescue group reached the place of the accident.
+Here, the same signalling logic as in the first example breaks down: the equilibrium is reached, yet the elephant attacks. However, the event suggests a richer model of rationality, where the animal is able to recognise an "error".
+\vspace{1em}
+
+Both scenarios can be framed within game theory, yet each reveals elements of cognition and emotion that standard frameworks overlook.
+
+In particlar, we consider three puzzles that emerge from these examples:
+
+\begin{enumerate}
+  \item Why does the animal attacks and then provides assistance? Isn't it contradictory?
+  \item Why does the animal initiates an attack only in one of the two cases?
+  \item What is rational? To attack and regret the decision, or not attack at all? With respect to what criteria do we define which is the best strategy?
+  \item Which is the best strategy in evolutionary terms?
+\end{enumerate}
+
+\subsection{Parallel with Game Theory}
+I believe game-theoretic analysis accurately captures the key strategic features of both cases. For example, the fact that the animal initiates a conflict with humans and tends to be pacific with most of other creatures is due to the fact that humans are one of the few threats they face in nature. Game theory correctly models agents as driven by incentives, yet it does not account for interactions in which the agent acts violently because of \textit{its malicious nature}. Similarly, game theory formalises credible threats as equilibria depending on the information available to players: not the turist nor the sheperd intended to intentionally harm an animal that could plausibly kill them, for example.
+
+\vspace*{1em}
+Additionally, there are plenty of models that suit each of the two situations. For instance, as shown below, some formalisations explain the behaviuor of the first case thorugh the concept of mimicry: the elphant knows it will not cause harm to the tourist. However, the turist cannot distinguish between an animal with good or bad intentions, and the elephant exploits this weakeness for defensive porposes.
+
+\vspace*{1em}
+Thus, both animals and humans may be depicted as rational agents, since their behaviour appears to be consistent with consistent with the incentives they face and with a broader objective, if not with a specific aim in mind. Both appear to be able to communicate with each other, indicating that both species are adapting to signals from other agents and that they can act as informed agents. And both seem to be aware of each other's strengths, at least partially \parencite{smithLogicAnimalConflict1973,schellingStrategyConflict1960}. Again, in both encounters, the animal appears peaceful and willing to avoid or prevent conflict, at least up to a point.
+
+% \subsubsection{Paragrafo Incomprensibile}
+% However, I believe we are still missing something. To describe these situations more accurately, we should introduce a new feature. Why do we see two different behaviours then? I believe these parallels also reveal what is absent from our theoretical framework.
+% A possible explanation is that the two human beings differed from each other in some feature that was relevant to the context. On the other side, the same explanation may well be applied to the animals, which may be considered to have their own "personalities" (as \textcite{safinaWordsWhatAnimals2015} well explains in his book).
+
+\subsection{Representative Agents}
+In both cases analogies between humans' and animals' minds do not appear to be straightforward. However, most of their differences need not be represented in game theory formalisations. Additionally, game theory is often applied at different levels of analysis (e.g.\ nations' behaviour), which means that only the crucial features of agents need to be represented.
+
+\vspace*{1em}
+Thus, under the descriptive limits of these games and under their assumptions, I believe no confusion arises when I use "human", "elephant", and "agent" interchangeably. \textit{I will differentiate between these agents only in those cases in which it is necessary, and with due warning to the reader.}

@@ -1,0 +1,62 @@
+% !TeX root = ../Tex/main.tex
+
+
+\section{Causal Inference}
+
+\vspace{1em}
+The discussion so far motivates a comparison to frameworks that model how unobserved factors influence observed outcomes.
+Causal inference \parencite{pearlCausalityModelsReasoning2009} suggests that in order to answer the question of interest, we may also think of an unobserved confounder that that is mistakenly excluded from the framework. I argue that an omitted variable is present in this setting.
+
+\subsection{Potential Outcomes Framework}
+This section formalises the intuition using a DAG\@. To make the subsequent discussion accessible, it first outlines how the potential-outcomes framework applies to this set-up.
+
+\vspace*{1em}
+A potential outcome is a counterfactual. Thus, it is a scenario that we do not observe; we think of it as the closest plausible scenario that might have happened had the actual one not occurred.
+
+In the case of the two interactions presented here, each of them may be considered the counterfactual scenario of the other. Since counterfactual outcomes do not exist, we use real and observed cases to mimic them. The underlieng belief is that no researcher is as informative as reality itself in producing examples of what might have happened. If we rely on observation, the role of the researcher is limited to selecting the most appropriate counterfactual from those offered by the natural world.
+
+\vspace*{1em}
+\textit{Hypothesis:} absent any causal effect of emotions, the instance involving the elephant and the sheperd would have been identical to the situation offered by the other elephant and the tourist.
+
+\subsection{Application of the Potential Outcomes Framework}
+
+% \begin{figure}[htpb] %  figure placement: here, top, bottom, or page
+%     \centering
+%     \includegraphics[width=1\linewidth]{Tex/Brauninger.jpg}
+%     \caption{\texit{Causal DAG.}}
+%     \label{fig:foto}
+% \end{figure}
+
+\begin{center}
+    \includegraphics[width=1\textwidth]{Tex/Brauninger.jpg}
+    \captionof{figure}{\textit{Causal DAG.}}
+    \label{fig:foto}
+\end{center}
+
+The graph shows five circles that represent our variables. We temporarily set aside the emotion node to describe the baseline case.
+
+In the baseline set-up agents are represented by perceptions, rationality and behaviour. The former two shape the latter, which is the outcome variable of interest. A change in perceptions corresponds to a change in actions.
+Rationality is modelled as the decision rule or the algorithm agents have in their minds. It is the function that represents utility. Two players with the same utility function act in the same way when facing the same game. This means that a change in rationality corresponds to a chenge in behaviour.
+
+Our outcome variable is the only one we can observe and measure. In the two occurrences described by \textcite{safinaWordsWhatAnimals2015}, we \textit{observe} the conduct of elephants and humans. However, we can only \textit{infer} rationality and perceptions.
+
+\vspace*{1em}
+When we represent two agents using three variables, we make use of three circles for each player. Nonetheless, the figure presents only one circle for perceptions and only one circle for rationality.
+
+This choice reflects a simplification. In order to ease the analysis, we assume that both agents perceive reality in the same way. Thus, both receive the same stimuli from the environment. We also assume that they process these stimuli through the same algorithm. They weigh the same benefits and costs in the same way.
+These assumptions symplify the baseline setting because restrict the set of potential outcomes: we consider only two possible outcomes: rationality in state \(\small{A}\) or \(\small{B}\) and perceptions in state \(\small{A}\) or \(\small{B}\).
+
+\vspace*{1em}
+How do we distinguish between the two agents in the Causal DAG\@? They differ in the realised behavioural outcome. While human conduct is constant, elephant is different in the two instances (\nameref{sub:problem}), this is why we have one circle for each player.
+
+\vspace*{1em}
+We have 4 circles, three of which are constant in the two occurrences. The fifth one represents elephant's emotions. This variable provides the key source of variation across cases. Thus, it can explain the change in elephant behaviour.
+
+\subsection{The Rationale for using Causal Inference \newline \small{From the General Case to a Single Case--and Back Again}}
+\textcite[chap.~2, p.~14]{vonneumannTheoryGamesEconomic1990} write: "An almost exact theory of a gas, containing about \(10^{25}\) freely moving particles, is incomparably easier than that of the solar system, made up of 9 major bodies; and still more than that of a multiple star of three or four objects of about the same size. This is, of course, due to the excellent possibility of applying the laws of statistics and probabilities in the first case. [\dots] The problem must be formulated, solved and understood for small numbers of participants before anything can be proved about the changes of its character in any limiting case of large numbers".
+
+\vspace*{1em}
+To pursue this suggestion, we move the abstract general case of rational-agent model to analyse specific interactions in which the representation fails to adequately map reality.
+
+We then turn to causal inference in order to reconstruct a more general account: namely, to move from the idiosyncrasies of a single interaction to a \textit{new} general framework. This requires abstracting away from irrelevant features and identifying a shared causal mechanism. The result is a revised pattern: a new map that can guide inference, organise the evidence, capture the data-generating process.
+
