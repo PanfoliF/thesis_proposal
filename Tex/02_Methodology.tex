@@ -1,28 +1,40 @@
 % !TeX root = ../Tex/main.tex
 
-\section{Introducation to the Second Part of the Paper} \label{sub:methodology}
+\section{Introducation} \label{sub:methodology}
 This second part of the paper is dedicated to test the analysis conducted by Professor Atrhur Spirling \parencite{spirlingDemocratizationLinguisticComplexity2016}. Actually, it provides good reasons to not stop doing research on the topic. In fact, it does not offer any decisive or comprehensive proof of any hypothesis. It suggest that slighlty moving the focus of regressions and inferece closer to the data of 1868 makes us change perpective on linguistic simplification.
 
-\vspace*{1em}
-\textit{Knowledge of Institutional Setting:} The analysis conducted is not supported by knowledge of institutional setting. Under, this aspect it well reflects what Spirling stated \parencite{spirlingDemocratizationLinguisticComplexity2016} and does not go deeper. A broader review of the literature on hystorical context in UK and UK parliament is set to be part of future researches that will expand this research proposal.
+%\vspace*{1em}
+%\textit{Knowledge of Institutional Setting:} The analysis conducted is not supported by knowledge of institutional setting. Under, this aspect it well reflects what Spirling stated \parencite{spirlingDemocratizationLinguisticComplexity2016} and does not go deeper. A broader review of the literature on hystorical context in UK and UK parliament is set to be part of future researches that will expand this research proposal.
 
 \vspace*{1em}
-\textit{Knowledge of Language:} A second limit of the present proposal is linguistic knowledge. In order to strenghthen the results of causal inference it is good to have deep understanding of the language used at the time. This would also shape the selection of n-grams, discriding irrelevant term and valuing relevant expressions. %\textcolor{red}{ma forse vale la pena aggiungere qualche reference sulla lingua}.
+\textit{Knowledge of Language:} A limit of the present proposal is linguistic knowledge. In order to strenghthen the results of causal inference it is good to have deep understanding of the language used at the time. This would also shape the selection of n-grams, discriding irrelevant term and valuing relevant expressions. %\textcolor{red}{ma forse vale la pena aggiungere qualche reference sulla lingua}.
 
 \vspace*{1em}
-\textit{Data:} From the point of view of data, I build on the databese provided by Professor Spirling \parencite{spirlingDemocratizationLinguisticComplexity2016, spirlingReplicationMaterialsDemocratization2015}. I rely on the text as data analysis Professor Spirling conducted in 2015. However, I plan to add topic modelling as a final step. In this way, it will be possible to anlayse correlation between linguistic simplification and extensiono of electorate for each topic identified. In the next section I will provide more details on data emplyed in the study.
+\textit{Data:} When I first tried to reproduce \textcite{spirlingDemocratizationLinguisticComplexity2016}'s replication package I found out that it is incomplete. I texed Professor \textcite{spirlingDemocratizationLinguisticComplexity2016} and he confirmed that the first part of the pipeline is missing.
+
+The first aim of the analysis is to produce that first part of the pipeline and test whether the results lead to the same conclusion. I already retrieved data from the \href{https://hansard.parliament.uk/}{UK Parliament website} and I have already computed the basic linguistic measures.
 
 \vspace*{1em}
-\textit{DGP:} It is necessary to understand the data generating process of the topic model in detail in order to match it with the data generating process of speeches. All of the many models reviewed belong to state-of-the art techniques. And all of them have been used in previous political science literature. Therefore, under any likelihood, the literature review will serve as foundation for the extension of the topic modelling analysis.
+\textit{DGP and Theoretical Model:} I intend to lay down a game theory model to describe and formalise the structure of the debate inside the Parliament. I will follow the most relevant examples in the literature such as \textcite{prokschPoliticsParliamentaryDebate2014, backPoliticalPartiesParliaments2016}.
+The theoretical model will provide the basis for the Data Generatig Process.
 
 \vspace*{1em}
-\textit{Causal Inference:} In this section I present the intuition that challenges the results of \textcite{spirlingDemocratizationLinguisticComplexity2016}. According to Professor Spirling analysis, after the broadening of electorate base of UK's House of Commons the language used in parliamentary speeches suffered of simplification in terms of lenghth of sentences and words used. Nonetheless, data used in the emprirical tests included observations vary far form the year of the shock (1868). Narrowing down the window of analysis, and robust implying causal inference methodology, I challenge this result and provide a good reason for further testing the main hypothesis.
+\textit{Causal Inference:} In this section I present the intuition that challenges the results of \textcite{spirlingDemocratizationLinguisticComplexity2016}. According to Professor Spirling analysis, after the broadening of electorate base of UK's House of Commons the language used in parliamentary speeches suffered of simplification in terms of lenghth of sentences and words used. In particular, \textcite{spirlingDemocratizationLinguisticComplexity2016} tests the hypothesis that the treatment affects cabinet members language more than non-cabinet members language.
 
-\vspace*{1em}
-\textit{Future Research and Limitations:} I conclude this research proposal with a brief list of limitations which are intrinsic of the methodology employed. I complete the paragraph some instances of possible future research that maybe conducted in this topic.
+In the first part of the causal inference section I will challenge the hypothesis that the treatment affects at all the language in the parliament. I will use a DinD to estimate the coefficient of the the difference between linguistic trend in the two housesof the UK Parliament. Since the house of Lords is a non-elective chamber, the widening of the electorate should not influence the linguistic measures of the debate in this chamber. Thus, the measures of this house should provide a good control group (if parallel trend assumption holds).
+
+In the second part I will build a topic model to create variables that describe to what extent a debate in parliament belongs to a specif topic. I will use these variables to understand how different topics influence the dependent variable.
+
+In the third part I narrow down the window of data and I challenge \textcite{spirlingDemocratizationLinguisticComplexity2016}'s main hypothesis, namely the treatment affects cabinet members language more than non-cabinet members language.
+I still have to find support for this test. I will deep my knowledge on bandwidth selection to understand the main drivers of this choice and its main effects on the resulting coefficients.
+
+In the fourth part I will use topic model to understand whether the hypothesis to topic specification.
+
+While in the original papaer from \textcite{spirlingDemocratizationLinguisticComplexity2016}, they use only one linguistic measure. I intend to provide the results from more statistics, to avoid biases that may arise from a single measure.
+ 
 
 \section{Causal Inference}
-\lipsum[1] % genera il primo paragrafo di testo Lorem Ipsum
+%\lipsum[1] % genera il primo paragrafo di testo Lorem Ipsum
 
 \subsection{RDD}
 The identification strategy emplyed in this proposal is regression discontinuity design. Among the classical literature on RDD, I like highlighting two great contributions: \textcite{fujiwaraVotingTechnologyPolitical2015, gulzarPoliticiansBureaucratsDevelopment2017}. A more recent study on RDD methodology is presented by \textcite{cattaneoPracticalIntroductionRegression2024}.
