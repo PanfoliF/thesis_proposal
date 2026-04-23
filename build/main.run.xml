@@ -84,7 +84,7 @@
       <file>main.bcf</file>
     </requires>
     <requires type="editable">
-      <file>/Users/filippo/Documents/Lab/thesis_proposal/Formal_Models.bib</file>
+      <file>/Users/filippo/Documents/Lab/thesis_proposal/quantitative_analysis.bib</file>
     </requires>
   </external>
 </requests>

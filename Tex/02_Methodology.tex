@@ -1,0 +1,57 @@
+% !TeX root = ../Tex/main.tex
+
+\section{Introducation to the Second Part of the Paper} \label{sub:methodology}
+This second part of the paper is dedicated to test the analysis conducted by Professor Atrhur Spirling \parencite{spirlingDemocratizationLinguisticComplexity2016}. Actually, it provides good reasons to not stop doing research on the topic. In fact, it does not offer any decisive or comprehensive proof of any hypothesis. It suggest that slighlty moving the focus of regressions and inferece closer to the data of 1868 makes us change perpective on linguistic simplification.
+
+\vspace*{1em}
+\textit{Knowledge of Institutional Setting:} The analysis conducted is not supported by knowledge of institutional setting. Under, this aspect it well reflects what Spirling stated \parencite{spirlingDemocratizationLinguisticComplexity2016} and does not go deeper. A broader review of the literature on hystorical context in UK and UK parliament is set to be part of future researches that will expand this research proposal.
+
+\vspace*{1em}
+\textit{Knowledge of Language:} A second limit of the present proposal is linguistic knowledge. In order to strenghthen the results of causal inference it is good to have deep understanding of the language used at the time. This would also shape the selection of n-grams, discriding irrelevant term and valuing relevant expressions. %\textcolor{red}{ma forse vale la pena aggiungere qualche reference sulla lingua}.
+
+\vspace*{1em}
+\textit{Data:} From the point of view of data, I build on the databese provided by Professor Spirling \parencite{spirlingDemocratizationLinguisticComplexity2016, spirlingReplicationMaterialsDemocratization2015}. I rely on the text as data analysis Professor Spirling conducted in 2015. However, I plan to add topic modelling as a final step. In this way, it will be possible to anlayse correlation between linguistic simplification and extensiono of electorate for each topic identified. In the next section I will provide more details on data emplyed in the study.
+
+\vspace*{1em}
+\textit{DGP:} It is necessary to understand the data generating process of the topic model in detail in order to match it with the data generating process of speeches. All of the many models reviewed belong to state-of-the art techniques. And all of them have been used in previous political science literature. Therefore, under any likelihood, the literature review will serve as foundation for the extension of the topic modelling analysis.
+
+\vspace*{1em}
+\textit{Causal Inference:} In this section I present the intuition that challenges the results of \textcite{spirlingDemocratizationLinguisticComplexity2016}. According to Professor Spirling analysis, after the broadening of electorate base of UK's House of Commons the language used in parliamentary speeches suffered of simplification in terms of lenghth of sentences and words used. Nonetheless, data used in the emprirical tests included observations vary far form the year of the shock (1868). Narrowing down the window of analysis, and robust implying causal inference methodology, I challenge this result and provide a good reason for further testing the main hypothesis.
+
+\vspace*{1em}
+\textit{Future Research and Limitations:} I conclude this research proposal with a brief list of limitations which are intrinsic of the methodology employed. I complete the paragraph some instances of possible future research that maybe conducted in this topic.
+
+\section{Causal Inference}
+\lipsum[1] % genera il primo paragrafo di testo Lorem Ipsum
+
+\subsection{RDD}
+The identification strategy emplyed in this proposal is regression discontinuity design. Among the classical literature on RDD, I like highlighting two great contributions: \textcite{fujiwaraVotingTechnologyPolitical2015, gulzarPoliticiansBureaucratsDevelopment2017}. A more recent study on RDD methodology is presented by \textcite{cattaneoPracticalIntroductionRegression2024}.
+
+The equation used is the following:
+
+\vspace*{0.3em}
+\[
+FRE = \beta_0 + \beta_1 \cdot Cutoff + \gamma X + \varepsilon
+\]
+\vspace*{0.1em}
+\[
+FRE = \beta_0 + \beta_1 \cdot C + \gamma X + \varepsilon
+\]
+
+\vspace*{1em}
+Identification strategy relies on:
+\begin{itemize}
+    \item[-] \small{\(C\)} is the treatment. It is an exgoneous variable independet from the others called cutoff. In our regression the cutoff is 1868, namely the year in which the reform was introduced
+    \item[-] \small{\(Y\)} is any of the measures of linguistic simplification employed.
+\end{itemize}
+
+\vspace*{1em}
+\textit{Controls:} The vector of controls is \small{\(X\)}, while \small{\(\gamma\)} is the vector of coefficients. It represents the effects of control variables on our outcome variable. The selected controls are:
+\begin{itemize}
+    \item[-] Competitiveness (of electoral distric)
+    \item[-] Party
+\end{itemize}
+These variables are the same as \textcite{spirlingDemocratizationLinguisticComplexity2016}.
+
+
+%------- End of the File -------
